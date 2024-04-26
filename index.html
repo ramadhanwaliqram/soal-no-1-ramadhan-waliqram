@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+
+<body>
+    <h1>Palindrome</h1>
+</body>
+<script>
+    function isPalindrome(str) {
+        // Mengonversi string ke huruf kecil dan menghilangkan spasi
+        str = str.toLowerCase().replace(/\s/g, '');
+
+        // Deklarasi variabel untuk mengecek palindrom
+        let left = 0;
+        let right = str.length - 1;
+
+        // Mengecek setiap karakter dari kedua ujung string
+        while (left < right) {
+            // Jika karakter yang berlawanan tidak sama, bukan palindrom
+            if (str[left] !== str[right]) {
+                return false;
+            }
+            // Bergerak ke karakter berikutnya
+            left++;
+            right--;
+        }
+
+        // Jika semua karakter cocok, itu adalah palindrom
+        return true;
+    }
+
+    let word = prompt("Masukkan sebuah kata yang ingin di cek apakah palindrome?");
+    isPalindrome(word) ? alert(word + " = TRUE") : alert(word + " = FALSE");
+
+</script>
+
+</html>
